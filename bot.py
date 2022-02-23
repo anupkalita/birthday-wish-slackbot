@@ -4,9 +4,9 @@ from flask import Flask
 from slackeventsapi import SlackEventAdapter
 
 app = Flask(__name__)
-slack_event_adapter = SlackEventAdapter("5b3f3da259964d55f4af3a68bd6ccc3f", "/slack/events", app)
+slack_event_adapter = SlackEventAdapter("SLACK_EVENT_TOKEN", "/slack/events", app)
 
-client = slack.WebClient(token="xoxb-3140197001491-3153889557873-COM2kYTjSErrlhWsWzXyfn5a")
+client = slack.WebClient(token="SLACK_BOT_TOKEN")
 # client.chat_postMessage(channel="#random", text="Hi")
 BOT_ID = client.api_call("auth.test")["user_id"]
 x = datetime.now()
