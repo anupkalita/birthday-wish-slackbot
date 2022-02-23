@@ -9,9 +9,13 @@ slack_event_adapter = SlackEventAdapter("SLACK_EVENT_TOKEN", "/slack/events", ap
 client = slack.WebClient(token="SLACK_BOT_TOKEN")
 # client.chat_postMessage(channel="#random", text="Hi")
 BOT_ID = client.api_call("auth.test")["user_id"]
+
+# get current date
 x = datetime.now()
 current_date = str(x.day) + "-" +str(x.month)
 print(current_date)
+
+#fetch messages from slack using slack api
 @slack_event_adapter.on('message')
 def message(payload):
     event = payload.get('event', {})
