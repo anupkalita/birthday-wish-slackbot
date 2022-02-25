@@ -18,6 +18,7 @@ Birthday wish slack bot using python
 * To remove Bday Details - `rm-bday/<date>/<name>/<user_id>`
 * To See Jokes - `joke/`
 * To get weather report of a particular city - `weather/<city>`
+* For help - `help/`
 
 ## Tech Used
 1. Python
