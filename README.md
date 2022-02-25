@@ -24,3 +24,5 @@ Birthday wish slack bot using python
 1. Python
 2. ngrok - It is the server which will listen to the slack events
 3. slackeventsapi - It is used to access the slack api. eg: messages, user_id etc
+
+* run:- create a `slack bot` in slack and add the `token` in the python code. run `ngrok` server and add the `public ip` to the `slack` event subscription. Get the `signing token` and add it to python code. Then add the the bot in a channel.
