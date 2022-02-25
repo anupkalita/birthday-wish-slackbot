@@ -9,9 +9,9 @@ import requests
 import json
 
 app = Flask(__name__)
-slack_event_adapter = SlackEventAdapter("5b3f3da259964d55f4af3a68bd6ccc3f", "/slack/events", app)
+slack_event_adapter = SlackEventAdapter("TOKEN", "/slack/events", app)
 
-client = slack.WebClient(token="xoxb-3140197001491-3153889557873-tqrm3XcbC2y3gKE1F8FhRRCn")
+client = slack.WebClient(token="TOKEN")
 
 BOT_ID = client.api_call("auth.test")["user_id"]
 x = datetime.now()
