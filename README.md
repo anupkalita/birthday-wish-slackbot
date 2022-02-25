@@ -6,10 +6,18 @@ Birthday wish slack bot using python
 2. It can post messages to the slack channel
 3. It can get the birthday details from the user and store it in the database.
 4. It can send birthday wishes to the user in the slack channel
+5. It can View Birthday details
+6. It can remove Birthday details
+7. It can used to read jokes
+8. It can get weather report of a particular city
 
 ## Usage:
 * User has to give their birthday details and user name as a message in the slack channel in this format-
 `bday/<day>-<month>/<username>`
+* To show Bday Details - `show/`
+* To remove Bday Details - `rm-bday/<date>/<name>/<user_id>`
+* To See Jokes - `joke/`
+* To get weather report of a particular city - `weather/<city>`
 
 ## Tech Used
 1. Python
