@@ -145,6 +145,13 @@ def weather(channel_id, city):
     client.chat_postMessage(channel=channel_id, text=f"{time}, {temp}{degree} celsius, {comment}") 
     print(temp, city)
 
+def help(channel_id):
+    client.chat_postMessage(channel=channel_id, text="to get joke - `joke/`")
+    client.chat_postMessage(channel=channel_id, text="to get weather reports - `weather/<city>`")
+    client.chat_postMessage(channel=channel_id, text="to add your bday - `bday/<day>-<month>/<username>`")
+    client.chat_postMessage(channel=channel_id, text="to see bday details - `show/`")
+    client.chat_postMessage(channel=channel_id, text="to remove bday details - `rm-bday/<day>-<month>/<name>/user_id`")
+
 bday_wish()
 # cursor.execute("DROP TABLE bday_wishes")
 # cursor.execute("DROP TABLE bday_details")
@@ -156,6 +163,8 @@ print(results)
 cursor.execute("SELECT * FROM bday_wishes")
 results = cursor.fetchall()
 print(results)
+
+
 
 #fetch messages from slack using slack api
 @slack_event_adapter.on('message')
@@ -187,6 +196,9 @@ def message(payload):
             city = text.split("/")
             city = city[1].lower()
             weather(channel_id, city)
+
+        elif text.startswith("help/"):
+            help(channel_id)
 
 
 connection.commit()
